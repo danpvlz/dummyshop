@@ -1,0 +1,53 @@
+---
+export const prerender = false;
+
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+const products = await fetch("https://fakestoreapi.com/products").then((res) => res.json());
+
+type Product = {
+    id: number;
+    title: string;
+    image: string;
+}
+---
+
+<Layout title="Shop page.">
+	<main>
+        <h1>Products:</h1>
+        <a href="/">Go back</a>
+        <div class="products">
+        {
+            products.map((product:Product)=>
+                <Card
+                    href={`/product/${product.id}`}
+                    title={product.title}
+                    imageURL={product.image}
+                    body={""}
+                />
+            )
+        }
+        </div>
+    </main>
+</Layout>
+
+<style>
+    main{
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+	.products {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+	}
+</style>

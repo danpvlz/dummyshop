@@ -1,0 +1,70 @@
+---
+export const prerender = false;
+
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+
+if (!id) {
+  return Astro.redirect('/404');
+}
+
+type Product = {
+    id: number;
+    title: string;
+    price: number;
+    description: string;
+    image: string;
+}
+
+
+const product: Product = await fetch(`https://fakestoreapi.com/products/${id}`).then((res) => res.json());
+if (!product) {
+  return Astro.redirect('/404');
+}
+
+---
+
+<Layout title="Welcome to Astro.">
+    <main>
+        <a href="/shop">Go to shop</a>
+        <div class="product">
+            <img src={product.image} />
+            <div>
+                <h1>{product.title}</h1>
+                <h2>${product.price}</h2>
+                <p>{product.description}</p>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+
+<style>
+    main{
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    h1{
+        margin: 0px;
+    }
+
+    img{
+        width: 400px;
+    }
+</style>
