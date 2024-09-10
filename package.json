@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/node": "^8.3.3",
     "astro": "^4.15.3",
+    "astro-aws-amplify": "^0.1.0",
     "typescript": "^5.5.4"
   }
 }
