@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 
-import awsAmplify from 'astro-aws-amplify';
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: awsAmplify()
+  adapter: vercel()
 });
