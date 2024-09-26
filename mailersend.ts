@@ -1,5 +1,3 @@
-export const prerender = false;
-
 export const SendMail = async (subject: string, html: string) => {
   let url = 'https://api.mailersend.com/v1/email';
   const apiKey = import.meta.env.MAILERSEND_API_KEY;
