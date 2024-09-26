@@ -11,11 +11,8 @@ export const server = {
     }),
     handler: async ({  }) => {
         try {
-            await SendMail("Nueva Solicitud de Test Drive", TestDriveEmail(""));
-            return {
-                title: '"Muchas Gracias”',
-                description: 'Muy pronto nuestros asesores se pondrán en contacto.'
-            };
+            const response = await SendMail("Nueva Solicitud de Test Drive", TestDriveEmail(""));
+            return response;
         } catch (error) {
             throw new ActionError({
                 code: "INTERNAL_SERVER_ERROR",
