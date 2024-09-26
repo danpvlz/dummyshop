@@ -1,0 +1,26 @@
+<section class="grid grid-cols-1 md:grid-cols-2 gap-20 pt-24">
+    <form >
+        <input name="full_name" />
+        <button id="submitBtn">send!</button>
+    </form>
+</section>
+
+<script>
+    import { actions } from 'astro:actions';
+
+    const submitButton = document.getElementById('submitBtn') as HTMLButtonElement;
+    const form = document.querySelector('form') as HTMLFormElement;
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const { error, data } = await actions.testDrive(formData);
+
+        console.log("data",data);
+        console.log("error",error);
+
+        form.reset();
+    });
+
+</script>

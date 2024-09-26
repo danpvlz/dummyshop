@@ -18,7 +18,7 @@ type Product = {
 }
 
 
-const product: Product = await fetch(`https://fakestoreapi.com/products/${import.meta.env.PRODUCT_ID}`).then((res) => res.json());
+const product: Product = await fetch(`https://fakestoreapi.com/products/${id}`).then((res) => res.json());
 if (!product) {
   return Astro.redirect('/404');
 }
