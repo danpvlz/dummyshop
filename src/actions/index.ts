@@ -17,7 +17,7 @@ export const server = {
             console.log(error)
             throw new ActionError({
                 code: "INTERNAL_SERVER_ERROR",
-                message: "No se pudo enviar el correo.",
+                message: JSON.stringify(error)
             });
         }
     },
