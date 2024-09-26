@@ -41,9 +41,10 @@ export const SendMail = async (subject: string, html: string) => {
     } else {
       const result = await response.json();
       console.error('Failed to send email:', result.errors);
-      return false;
+      return result.errors;
     }
   } catch (error) {
     console.error('Error sending email:', error);
+    return error;
   }
 }
