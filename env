@@ -1,0 +1,5 @@
+APP_URL = http://localhost:4321
+MAIL_FROM_EMAIL = noreply@neuronadevelopers.com
+MAIL_FROM_NAME = "Calesa Toyota"
+MAIL_TO_EMAIL = danielap@neuronaagency.com
+MAIL_TO_NAME = "Daniela Paiva"
