@@ -12,7 +12,7 @@ export const server = {
     handler: async ({  }) => {
         try {
             const response = await SendMail("Nueva Solicitud de Test Drive", TestDriveEmail(""));
-            return response;
+            return response || "response...";
         } catch (error) {
             throw new ActionError({
                 code: "INTERNAL_SERVER_ERROR",
