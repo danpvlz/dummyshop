@@ -48,7 +48,12 @@ export const POST: APIRoute = async ({ request }) => {
       console.log('Failed to send email', result.errors);
       return new Response(JSON.stringify({
         message: 'Failed to send email',
-        error: result.errors
+        error: result.errors,
+        fromEmmail,
+        fromName,
+        toEmmail,
+        toName,
+        apiKey,
       }));
     }
   } catch (error) {
