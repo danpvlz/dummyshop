@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build && pagefind --site .amplify-hosting/static/ ",
+    "build": "astro check && astro build && pagefind --site .amplify-hosting/static/ && rm -r .amplify-hosting/pagefind",
     "preview": "astro preview",
     "astro": "astro"
   },
