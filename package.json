@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro check && astro build && pagefind --site .amplify-hosting/static/  --serve",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -14,6 +14,8 @@
     "@astrojs/node": "^8.3.3",
     "astro": "^4.15.4",
     "astro-aws-amplify": "^0.1.0",
+    "astro-pagefind": "^1.6.0",
+    "pagefind": "^1.1.1",
     "sharp": "^0.33.5",
     "typescript": "^5.6.2"
   }

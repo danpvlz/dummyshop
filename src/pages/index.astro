@@ -2,6 +2,7 @@
 export const prerender = true;
 
 import Layout from '../layouts/Layout.astro';
+import Search from "astro-pagefind/components/Search";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -9,6 +10,8 @@ import Layout from '../layouts/Layout.astro';
 		<h1>Welcome to <span class="text-gradient">Car Shop ABC</span></h1>
 		<a href="/about">About us</a>
 		<a href="/shop">Shop</a>
+
+		<Search id="search" className="pagefind-ui" />
 	</main>
 </Layout>
 
