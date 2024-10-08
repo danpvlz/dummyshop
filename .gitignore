@@ -1,6 +1,7 @@
 # build output
 dist/
 .amplify-hosting/
+public/pagefind
 
 # generated types
 .astro/
